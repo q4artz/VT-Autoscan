@@ -15,28 +15,30 @@ IPGet(){
 		--url https://www.virustotal.com/api/v3/ip_addresses/$line \
 		--header 'accept: application/json' \
 		--header 'x-apikey:'. "$APIKEY" \
-> $pwd/resultfolder/out.json
+		> $pwd/resultfolder/out.json
 }
  
 DomainGet(){
-    curl --request GET \
-     --url https://www.virustotal.com/api/v3/domains/$line \
-     --header 'accept: application/json' \
-	 --header 'x-apikey:'. "$APIKEY" \
-> $pwd/resultfolder/out.json
+    curl --request GET \	
+    		--url https://www.virustotal.com/api/v3/domains/$line \
+     		--header 'accept: application/json' \
+	 	--header 'x-apikey:'. "$APIKEY" \
+		> $pwd/resultfolder/out.json
 }
  
 URLGet(){
     curl --request GET \
-     --url https://www.virustotal.com/api/v3/urls/$line \
-	 --header 'x-apikey:'. "$APIKEY" \
-> $pwd/resultfolder/out.json
+     		--url https://www.virustotal.com/api/v3/urls/$line \
+       		--header 'accept: application/json' \
+	 	--header 'x-apikey:'. "$APIKEY" \
+		> $pwd/resultfolder/out.json
 }
 HashGet(){
-    url --request GET \
-     --url https://www.virustotal.com/api/v3/files/$line \
-	 --header 'x-apikey:'. "$APIKEY" \
-> $pwd/resultfolder/out.json
+    curl --request GET \
+     		--url https://www.virustotal.com/api/v3/files/$line \
+	 	--header 'accept: application/json' \
+   		--header 'x-apikey:'. "$APIKEY" \
+		> $pwd/resultfolder/out.json
 }
  
 # creating required directories
