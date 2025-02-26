@@ -8,7 +8,7 @@ echo -e "\n ./vt.sh data.txt domain rescan \n"
 data=$1
 type=$2
 scan=$3
-APIKEY="Enter API Key HERE!!!!!"
+APIKEY="d56a714b7ec2de8d768652fa90bd55a0df28ee636aeb38c3be26d50c5a95c6fb"
 
 if [ "${data,,}" = "help" ]; then
     echo "help"
@@ -19,54 +19,54 @@ IPGet(){
     curl --request GET \
     		--url https://www.virustotal.com/api/v3/ip_addresses/$line \
     		--header 'accept: application/json' \
-    		--header 'x-apikey:'. "$APIKEY" \
+    		--header 'x-apikey:'.$APIKEY \
     		> $pwd/resultfolder/out.json
-}
+};
 DomainGet(){
     curl --request GET \	
     		--url https://www.virustotal.com/api/v3/domains/$line \
      		--header 'accept: application/json' \
-    	 	--header 'x-apikey:'. "$APIKEY" \
+    	 	--header 'x-apikey:'.$APIKEY \
     		> $pwd/resultfolder/out.json
-}
+};
 URLGet(){
     curl --request GET \
      		--url https://www.virustotal.com/api/v3/urls/$line \
        		--header 'accept: application/json' \
-    	 	--header 'x-apikey:'. "$APIKEY" \
+    	 	--header 'x-apikey:'.$APIKEY \
     		> $pwd/resultfolder/out.json
-}
+};
 HashGet(){
     curl --request GET \
      		--url https://www.virustotal.com/api/v3/files/$line \
     	 	--header 'accept: application/json' \
-       		--header 'x-apikey:'. "$APIKEY" \
+       		--header 'x-apikey:'.$APIKEY \
     		> $pwd/resultfolder/out.json
-}
+};
 IPRescan(){
     curl --request POST \
              --url https://www.virustotal.com/api/v3/ip_addresses/$line/analyse \
              --header 'accept: application/json' \
-             --header 'x-apikey:'. "$APIKEY" \
-}
+             --header 'x-apikey:'.$APIKEY
+};
 DomainRescan(){
     curl --request POST \
              --url https://www.virustotal.com/api/v3/domains/$line/analyse \
              --header 'accept: application/json' \
-             --header 'x-apikey:'. "$APIKEY" \
-}
+             --header 'x-apikey:'.$APIKEY
+};
 URLRescan(){
     curl --request POST \
              --url https://www.virustotal.com/api/v3/urls/$line/analyse \
              --header 'accept: application/json' \
-             --header 'x-apikey:'. "$APIKEY" \
-}
+             --header 'x-apikey:'.$APIKEY
+};
 HashRescan(){
     curl --request POST \
              --url https://www.virustotal.com/api/v3/files/$line/analyse \
              --header 'accept: application/json' \
-             --header 'x-apikey:'. "$APIKEY" \
-}
+             --header 'x-apikey:'.$APIKEY
+};
 
 # ---------------------------------------------------------------------------------------------------------------
  
