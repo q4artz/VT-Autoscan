@@ -8,7 +8,7 @@ echo -e "\n ./vt.sh data.txt domain rescan \n"
 data=$1
 type=$2
 scan=$3
-APIKEY="d56a714b7ec2de8d768652fa90bd55a0df28ee636aeb38c3be26d50c5a95c6fb"
+APIKEY=""
 
 if [ "${data,,}" = "help" ]; then
     echo "help"
